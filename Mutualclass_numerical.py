@@ -1,22 +1,35 @@
-from sklearn.datasets import load_iris
+# MUTUAL INFORMATION (NUMERICAL FEATURES)
+
 import pandas as pd
+from sklearn.datasets import load_iris
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 
-# Load dataset
+# 1. Load dataset
 iris = load_iris()
-X = iris.data
-y = iris.target
-feature_names = iris.feature_names
-X_df = pd.DataFrame(X, columns=feature_names)
+X = pd.DataFrame(iris.data, columns=iris.feature_names)
+y = pd.Series(iris.target)
+feature_names = X.columns
 
-# Select top 2 features using Mutual Information
-selector = SelectKBest(mutual_info_classif, k=2)
-X_reduced = selector.fit_transform(X, y)
+# 2. Select top-k features using Mutual Information
+k = 2
+mi_selector = SelectKBest(score_func=mutual_info_classif, k=k)
+X_reduced = mi_selector.fit_transform(X_df, y)
 
-# Get selected features directly
-selected_features = [feature_names[i] for i in selector.get_support(indices=True)]
-print("Selected features:", selected_features)
+# 3. Get MI scores
+mi_scores = mi_selector.scores_
+mi_feature_scores = pd.DataFrame({
+    'Feature': feature_names,
+    'MI Score': mi_scores
+}).sort_values(by='MI Score', ascending=False)
 
-# Keep only selected features
-X_df = X_df[selected_features]
-print("\nFinal Extracted DataFrame:\n", X_df.head())
+print("🔹 Mutual Information Scores:")
+print(mi_feature_scores)
+
+# 4. Get selected feature names
+mi_selected_features = feature_names[mi_selector.get_support()].tolist()
+print("\n🔹 Selected features by MI:", mi_selected_features)
+
+# 5. Build reduced DataFrame
+X_reduced = pd.DataFrame(X_reduced, columns=mi_selected_features)
+print("\n🔹 Reduced Dataset (MI – Top", k, "features):")
+print(X_reduced.head())
