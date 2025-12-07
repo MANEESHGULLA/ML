@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 # Load dataset
 data = load_iris()
 x = pd.DataFrame(data.data, columns=data.feature_names)
-y = pd.Series(data.target)
+y = data.target
 feature_names = x.columns
 
 # Scale features (recommended for ANOVA)
