@@ -8,7 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 # 1. Load dataset
 data = load_iris()
 X = pd.DataFrame(data.data, columns=data.feature_names)
-y = pd.Series(data.target)
+y = data.target
 feature_names = X.columns
 
 # 2. Scale features to non-negative values (required for chi2)
