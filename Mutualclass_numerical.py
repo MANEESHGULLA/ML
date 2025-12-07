@@ -7,7 +7,7 @@ from sklearn.feature_selection import SelectKBest, mutual_info_classif
 # 1. Load dataset
 iris = load_iris()
 X = pd.DataFrame(iris.data, columns=iris.feature_names)
-y = pd.Series(iris.target)
+y = iris.target
 feature_names = X.columns
 
 # 2. Select top-k features using Mutual Information
