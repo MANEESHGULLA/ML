@@ -1,5 +1,11 @@
 #ridge
-from sklearn.linear_model import Ridge
+import numpy as np
+import matplotlib.pyplot as plt
+
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, Ridge
+from sklearn.metrics import r2_score
 
 x,y=load_diabetes(return_X_y=True)
 
