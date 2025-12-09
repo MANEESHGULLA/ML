@@ -11,10 +11,16 @@ X = np.array([
 ])
 columns = ['Feature_A', 'Feature_B', 'Feature_C', 'Feature_D']
 df = pd.DataFrame(X, columns=columns)
+feature_names = df.columns
 
 sel = VarianceThreshold(threshold=0)
-df_selected = pd.DataFrame(sel.fit_transform(df), columns=df.columns[sel.get_support()])
-print(df_selected)
+df_reduced = sel.fit_transform(df)
+
+selected_features = feature_names[sel.get_support()].tolist()
+print(selected_features)
+
+df_reduced = pd.DataFrame(df_reduced,columns=selected_features)
+print(df_reduced)
 
 
 
