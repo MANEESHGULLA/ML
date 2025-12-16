@@ -1,5 +1,15 @@
 # CHI-SQUARE FEATURE SELECTION (CATEGORICAL TARGET + NON-NEGATIVE NUMERICAL FEATURES)
+#What is Chi-Square (χ²)
+#Chi-Square is a statistical test used to check dependence between a feature and the target
+#It measures whether a feature and class label are related
+#Used mainly for feature selection in classification
+#Works with non-negative numerical data
+#Chi-Square in Machine Learning
 
+#Chi-Square answers:
+#👉 Is this feature independent of the target or not?
+#If feature and target are dependent → feature is important
+#If independent → feature is not useful
 import pandas as pd
 from sklearn.datasets import load_iris
 from sklearn.feature_selection import SelectKBest, chi2
