@@ -1,3 +1,28 @@
+# What is Sequential Feature Selection (SFS)
+# Sequential Feature Selection is a wrapper-based feature selection method
+# It selects features based on model performance
+# Uses a machine learning model to evaluate feature combinations
+# Forward Feature Selection
+# Starts with zero features
+# Adds one feature at a time
+# At each step:
+# Tries all remaining features
+# Picks the one that improves model accuracy the most
+# Stops when required number of features is selected
+
+
+# How Forward Selection Works (Points)
+# Start with empty feature set
+# Train model with each single feature
+# Select feature with highest accuracy
+# Add selected feature to feature set
+# Repeat until desired number of features is reached
+
+
+# What is the Goal of This Code 
+# 👉 To select the best 2 features that give highest classification accuracy using Logistic Regression
+
+
 from sklearn.datasets import load_iris
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
