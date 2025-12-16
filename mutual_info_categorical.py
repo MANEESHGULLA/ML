@@ -1,3 +1,9 @@
+#What is Mutual Information (MI)
+#Mutual Information measures how much information one feature gives about the target
+#It shows dependency between feature and output
+#Higher MI → feature is more useful
+#MI value is always ≥ 0
+
 import pandas as pd
 from sklearn.feature_selection import mutual_info_classif
 from sklearn.preprocessing import LabelEncoder
