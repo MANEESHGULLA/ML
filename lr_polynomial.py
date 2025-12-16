@@ -1,3 +1,24 @@
+# POLYNOMIAL REGRESSION
+
+# 1. What is Polynomial Regression? (Definitions)
+# Polynomial Regression is an extension of Linear Regression
+# It models non-linear relationships between input x and output y
+# Uses powers of input features to fit curves
+
+# 2. What does Polynomial Regression find?
+# 1. Finds best-fitting curve
+# 2. Uses linear regression on transformed polynomial features
+# 3. Minimizes sum of squared errors
+# 4. Predicts non-linear patterns
+
+# 3. Polynomial Regression Equation
+# y = b0 + b1x + b2x^2 + ... + bnx^n
+
+# n → degree of polynomial
+# b0, b1, ... → coefficients
+# x^i → polynomial term
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
