@@ -32,7 +32,7 @@
 # Direction (positive / negative)
 
 # Strength (weak / strong)
-
+# to remove highly correlated features to reduce redundancy in the dataset
 from sklearn.datasets import fetch_california_housing
 import matplotlib.pyplot as plt
 import pandas as pd
