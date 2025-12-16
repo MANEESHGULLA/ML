@@ -57,6 +57,12 @@ print("Original DataFrame:\n", df)
 
 # One-Hot Encoding
 encoder = OneHotEncoder(sparse_output=False, drop=None)
+#sparse_output=False
+#By default, OneHotEncoder returns a sparse matrix (saves memory when dataset is huge).
+#xsparse_output=False tells it to return a regular dense NumPy array instead of a sparse matrix.
+
+#drop=None means keep all categories, i.e., no column is dropped.
+
 X_encoded = encoder.fit_transform(df)
 encoded_feature_names = encoder.get_feature_names_out(df.columns)
 df_encoded = pd.DataFrame(X_encoded, columns=encoded_feature_names)
