@@ -1,3 +1,38 @@
+# What is Correlation
+
+# Correlation measures how strongly two variables are related
+
+# It shows how one feature changes when another feature changes
+
+# Correlation value lies between -1 and +1
+
+# Definitions of Correlation
+
+# Positive correlation:
+# Both variables increase or decrease together
+# Example: income ↑ → house price ↑
+
+# Negative correlation:
+# One variable increases while the other decreases
+# Example: distance from city ↑ → house price ↓
+
+# Zero correlation:
+# No relationship between variables
+
+# How Correlation Works (Points)
+
+# Take two features
+
+# Compare how their values change together
+
+# Calculate correlation value
+
+# Result shows:
+
+# Direction (positive / negative)
+
+# Strength (weak / strong)
+
 from sklearn.datasets import fetch_california_housing
 import matplotlib.pyplot as plt
 import pandas as pd
