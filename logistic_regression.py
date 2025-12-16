@@ -1,3 +1,21 @@
+## 1. What is Logistic Regression? (Definitions)
+# Logistic Regression is a classification algorithm
+# Used when output is binary (0 or 1)
+# It predicts probability, not direct class
+
+# 2. What does Logistic Regression do?
+# Finds relationship between inputs and output
+# Calculates probability using sigmoid function
+# Converts probability into class (0 or 1)
+
+# 3. How Logistic Regression Works
+# Take input features
+# Multiply by weights
+# Add bias
+# Pass result through sigmoid function
+# Output probability (0 to 1)
+
+
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
