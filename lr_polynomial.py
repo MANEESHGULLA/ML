@@ -44,6 +44,9 @@ plt.plot(x_train,lr.predict(x_train),"r-")
 plt.show()
 
 poly=PolynomialFeatures(degree=2,include_bias=True)
+#include_bias controls whether to include the bias (intercept) column in the transformed features.
+#Bias column is a column of 1s
+#Needed if your LinearRegression model does not automatically add an intercept
 x_train_poly=poly.fit_transform(x_train)
 x_test_poly=poly.transform(x_test)
 
