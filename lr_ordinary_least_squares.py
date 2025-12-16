@@ -1,5 +1,49 @@
 #ordinary least sqaures
 
+#linear regression
+#Linear Regression models the relationship between independent variables (X) and a dependent variable (y) using a straight line.
+#Simple Linear Regression
+#y=mx+c
+
+# 1. What is Ordinary Least Squares? (Definitions)
+# OLS is a method to estimate parameters of Linear Regression
+# It finds the best-fit straight line
+# It minimizes the sum of squared errors
+# Used for continuous value prediction
+
+# 2. What does OLS find?
+# Finds the best slope (m)
+# Finds the best intercept (b)
+# Minimizes prediction error
+# Models linear relationship
+
+# 3. Linear Regression Equation
+# y=mx+b
+
+# Where:
+# m → slope
+# b → intercept
+# y → predicted value
+# x → input feature
+
+# 4. What is “Least Squares”?
+# Error = actual − predicted
+# Square the errors
+# Add all squared errors
+# Choose  𝑚,b
+# m,b that minimize this sum
+
+# 5. Does OLS work like this?
+# Assume a straight line
+# Compute prediction errors
+# Square the errors
+# Minimize total squared error
+# Get optimal slope & intercept
+
+# 6. Goal of OLS (One line)
+# ➡️ Find the best-fit line by minimizing squared prediction errors
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
