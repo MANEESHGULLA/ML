@@ -1,3 +1,10 @@
+# 1. What is Variance Threshold? (Definitions)
+# Variance Threshold is a filter-based feature selection method
+# It removes low-variance features
+# Features with very low variance contain little information
+# It is unsupervised (does not use labels)
+
+
 from sklearn.feature_selection import VarianceThreshold
 import pandas as pd
 import numpy as np
@@ -12,6 +19,11 @@ X = np.array([
 columns = ['Feature_A', 'Feature_B', 'Feature_C', 'Feature_D']
 df = pd.DataFrame(X, columns=columns)
 feature_names = df.columns
+
+# 2. Calculate variance of each feature
+variances = df.var()
+print("\nVariance of each feature:")
+print(variances)
 
 sel = VarianceThreshold(threshold=0)
 df_reduced = sel.fit_transform(df)
