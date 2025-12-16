@@ -1,3 +1,20 @@
+# What is Lasso Regression?
+# Lasso Regression (Least Absolute Shrinkage and Selection Operator) is a regularized linear regression technique that:
+# 👉 Reduces overfitting
+# 👉 Shrinks coefficients
+# 👉 Automatically performs feature selection
+
+# lasso Regression Works 
+# Starts with a normal linear regression model
+# Adds an L1 penalty (absolute value of coefficients) to the loss function
+# Penalizes large coefficient values
+# Shrinks coefficients toward zero
+# Forces some coefficients to become exactly zero
+# Automatically removes irrelevant features
+# Reduces overfitting
+# Produces a simpler, sparse model
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_diabetes
