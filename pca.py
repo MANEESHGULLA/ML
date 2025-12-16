@@ -14,7 +14,7 @@ print("Original shape:", X.shape)   # (150 samples, 4 features)
 
 # Step 3: Standardize the data (important for PCA)
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+X_scaled = scaler.fit_transform(X) #* * *
 
 # Step 4: Apply PCA (reduce to 2 dimensions for visualization)
 pca = PCA(n_components=2)
