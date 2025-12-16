@@ -4,6 +4,8 @@
 #Higher MI → feature is more useful
 #MI value is always ≥ 0
 
+#goal to select features with higher mi score
+
 import pandas as pd
 from sklearn.feature_selection import mutual_info_classif
 from sklearn.preprocessing import LabelEncoder
