@@ -1,3 +1,15 @@
+# What is ANOVA
+# ANOVA stands for Analysis of Variance
+# It is a statistical test used to check whether feature means differ across classes
+# Used mainly for feature selection in classification problems
+# Works with numerical features + categorical target
+
+# ANOVA in Machine Learning
+# ANOVA checks:
+# 👉 Does this feature help separate the classes?
+# If class means are very different → feature is important
+# If class means are similar → feature is less useful
+
 from sklearn.datasets import load_iris
 import pandas as pd
 from sklearn.feature_selection import SelectKBest, f_classif
