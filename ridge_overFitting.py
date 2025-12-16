@@ -1,4 +1,12 @@
 #ridge
+
+# 🔹 RIDGE REGRESSION (L2 REGULARIZATION)
+# 1. What is Ridge Regression? (Definitions)
+# Ridge Regression is a regularized version of Linear Regression
+# It adds an L2 penalty to the loss function
+# Shrinks coefficients but does NOT make them zero
+# Used to reduce overfitting and multicollinearity
+
 import numpy as np
 import matplotlib.pyplot as plt
 
