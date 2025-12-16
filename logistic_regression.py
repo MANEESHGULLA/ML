@@ -16,54 +16,60 @@
 # Output probability (0 to 1)
 
 
+import seaborn as sns
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix,accuracy_score
-import matplotlib.pyplot as plt
-import seaborn as sn
-url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
+from sklearn.metrics import confusion_matrix, accuracy_score
 
-columns = ["preg", "plas", "pres", "skin", "test", "mass", "pedi", "age", "class"]
+# Load the dataset
+df = pd.read_csv("pima-indians-diabetes-classification.csv")
 
-df = pd.read_csv(url, names=columns)
-
+# Display the first few rows of the dataset
 print("First 5 rows of the dataset:")
 print(df.head())
-print(df.shape)
-print()
 
-x=df.drop("class",axis=1)
-y=df['class']
+# Step 2: Split the Data into Features and Target
+X = df.drop('class', axis=1)  # Features
+y = df['class']               # Target
 
-scaler=StandardScaler()
-x_sclaed=scaler.fit_transform(x)
+# Step 3: Apply Standard Scaling to the Features
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
 
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=2)
+# Step 4: Split the Data into Training and Testing Sets
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.3, random_state=42)
 
-lr=LogisticRegression(max_iter=1000)
-lr.fit(x_train,y_train)
+print("Shape of X_train:", X_train.shape)
+print("Shape of y_train:", y_train.shape)
+print("Shape of X_test:", X_test.shape)
+print("Shape of y_test:", y_test.shape)
 
-y_pred=lr.predict(x_test)
+# Step 5: Train the Logistic Regression Model
+model = LogisticRegression()
+model.fit(X_train, y_train)
 
-print("\nconfusion matrix")
-cm=confusion_matrix(y_test,y_pred)
-print(cm)
+# Step 6: Make Predictions
+y_pred = model.predict(X_test)
 
-print("\naccuracy score")
-print(accuracy_score(y_test,y_pred))
+# Step 7: Evaluate the Model
+# Confusion Matrix
+cm = confusion_matrix(y_test, y_pred)
+print(" The confusion matrix is:", cm)
 
-print("\nnumber of non diabetic persons")
-num_non_diabetic=(y_test==0).sum()
-print(num_non_diabetic)
+# Accuracy Score   
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
 
-print("\nnumber of diabetic persons")
-num_diabetic=(y_test==1).sum()
-print(num_diabetic)
+num_non_diabetic_predicted = (y_test == 0).sum()
+print("Number of non diabetic persons in test data (actual):", num_non_diabetic_predicted)
 
-plt.figure(figsize=(8,6))
-sn.heatmap(cm,annot=True,fmt="d",cmap="Blues")
+num_diabetic_predicted = (y_test == 1).sum()
+print("Number of diabetic persons in test data (actual):", num_diabetic_predicted)
+
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
