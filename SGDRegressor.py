@@ -1,5 +1,23 @@
 
 # ======================== Example 2: SGDRegressor on California Housing dataset ========================
+# 1. What is SGD Regressor? (Definitions)
+# SGD Regressor is a linear regression model trained using Gradient Descent
+# It updates parameters one sample at a time
+# Suitable for large-scale datasets
+# Supports regularization (L1, L2, ElasticNet)
+
+# 2. What does SGD Regressor do?
+# Fits a linear model
+# Minimizes loss function using gradient descent
+# Updates weights incrementally
+# Learns slope and intercept
+
+# working
+# Initialize weights randomly
+# Pick one training sample
+# Compute prediction error
+# Update weights using gradient
+# Repeat for many iterations
 
 
 import numpy as np
