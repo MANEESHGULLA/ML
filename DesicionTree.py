@@ -1,3 +1,37 @@
+# DECISION TREE CLASSIFIER
+#
+# 1. What is a Decision Tree? (Definitions)
+# A Decision Tree is a supervised learning algorithm
+# Used for classification and regression
+# It makes decisions using if–else rules
+# Data is split into subsets based on feature conditions
+#
+# 2. What does a Decision Tree find?
+# Finds best feature to split the data
+# Creates decision rules
+# Maximizes class purity at each split
+# Learns a tree-like structure
+#
+# 3. Key Concepts in Decision Trees
+# Root Node → first split
+# Internal Nodes → feature-based decisions
+# Leaf Nodes → final prediction
+# Depth → levels of the tree
+#
+# 4. Splitting Criteria (Entropy)
+# Entropy
+# Measures impurity
+# Lower entropy → purer node
+# Tree chooses split with maximum Information Gain
+#
+# 5. Does Decision Tree work like this?
+# Start with full dataset
+# Calculate entropy for all features
+# Choose best split
+# Split data
+# Repeat until stopping condition
+
+
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.tree import plot_tree,DecisionTreeClassifier
